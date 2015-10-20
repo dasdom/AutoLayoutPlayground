@@ -16,7 +16,7 @@ let view = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
 view.backgroundColor = UIColor.redColor()
 XCPShowView("view", view: view)
 
-let subview = UIView(frame: CGRect.zeroRect)
+let subview = UIView(frame: .zero)
 subview.translatesAutoresizingMaskIntoConstraints = false
 subview.backgroundColor = UIColor.yellowColor()
 subview.clipsToBounds = true
@@ -28,9 +28,9 @@ view.addSubview(subview)
 
 subview.intrinsicContentSize()
 
-let zeroSize = CGSize.zeroSize
+let zeroSize = CGSize.zero
 
-let label = UILabel(frame: CGRect.zeroRect)
+let label = UILabel(frame: .zero)
 label.translatesAutoresizingMaskIntoConstraints = false
 label.text = "Auto Layout"
 

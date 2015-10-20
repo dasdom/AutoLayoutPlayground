@@ -15,7 +15,7 @@ Im folgenden wollen wir uns versiedene Layouts anschauen und wie diesen mit der 
 Zunächst erzeugen wir uns ein View, mit auf der wir die Testviews platzieren können. Damit sich die View vom Hintergrund absetzt, setzen wir ihre Hintergrundfarbe auf Gelb.
 */
 let hostView = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 100))
-hostView.backgroundColor = UIColor.yellowColor()
+hostView.backgroundColor = .yellowColor()
 XCPShowView("Host View", view: hostView)
 /*:
 Der Befehlt `XCPShowView("Host View", view: hostView)` zeigt die `hostView` im Assistant-Editor an.
@@ -27,7 +27,7 @@ hostView
 Um Layout-Constraints in Aktion beobachten zu können, benötigen wir Subviews, die wir auf der Host-View plazieren. Für die Erzeugung dieser Subviews definieren wir eine kleine Closure. Das selbe ließe sich mit einer Funktion erreichen. 
 */
 let makeView = { (color: UIColor) -> UIView in
-  let view = UIView(frame: CGRect.zeroRect)
+  let view = UIView(frame: .zero)
   view.translatesAutoresizingMaskIntoConstraints = false
   view.backgroundColor = color
   return view
@@ -37,13 +37,13 @@ Wichtig dabei ist, wenn wir Layout-Constraints im Code erzeugen wollen, müssen 
 
 Wir erzeugen drei farbige Views (rot, blau und grün) und fügen die ersten beiden gleich zur Host-View hinzu.
 */
-let redView = makeView(UIColor.redColor())
+let redView = makeView(.redColor())
 hostView.addSubview(redView)
 
-let blueView = makeView(UIColor.blueColor())
+let blueView = makeView(.blueColor())
 hostView.addSubview(blueView)
 
-let greenView = makeView(UIColor.greenColor())
+let greenView = makeView(.greenColor())
 
 /*:
 ## Eine einfache Subview
